@@ -1,0 +1,31 @@
+#Initial env setup for keyboard...
+sudo locale-gen en_US
+
+# go here to get vagrant installed and start running.
+# http://docs.docker.io/en/latest/installation/vagrant/
+
+# Familiarization
+
+#nice that ubuntu is already present
+sudo docker run ubuntu /bin/echo hi
+
+# run that ubuntu interactively
+sudo docker run -i -t ubuntu /bin/bash
+
+#see the images present
+sudo docker images
+
+#see if anything running
+sudo docker ps
+
+#get and run the boyork's titan cass - which has no public source
+sudo docker run -d -i -t boyork/titan-cassandra /bin/bash
+
+#get the other cassandra image based on precise, whose source is public
+# here: https://github.com/khanio/docker-images/tree/master/precise-cassandra-titan
+sudo docker run -d -i -t  khanio/precise-cassandra-titan
+
+
+# now you need this repo...
+git clone git@github.com:gremlins/shipyard.git
+
