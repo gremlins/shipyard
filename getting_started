@@ -23,9 +23,11 @@ sudo docker run -d -i -t boyork/titan-cassandra /bin/bash
 
 #get the other cassandra image based on precise, whose source is public
 # here: https://github.com/khanio/docker-images/tree/master/precise-cassandra-titan
-sudo docker run -d -i -t  khanio/precise-cassandra-titan
+sudo docker run -d -i -t -p 9160:9160 -p 9200:9200 khanio/precise-cassandra-titan
 
 
 # now you need this repo...
 git clone git@github.com:gremlins/shipyard.git
+
+sudo apt-get install python-virtualenv
 
