@@ -1,5 +1,4 @@
 #first, define a model
-import pdb; pdb.set_trace()
 from cqlengine import columns
 from cqlengine.models import Model
 import uuid
@@ -13,7 +12,10 @@ class ExampleModel(Model):
 
 #next, setup the connection to your cassandra server(s)...
 from cqlengine import connection
-connection.setup(['127.0.0.1:9160'])
+connection.setup(['localhost:9160'], 
+  username='cassandra', 
+  password='cassandra'
+)
 
 #...and create your CQL table
 from cqlengine.management import sync_table

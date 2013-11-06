@@ -25,6 +25,9 @@ sudo docker run -d -i -t boyork/titan-cassandra /bin/bash
 # here: https://github.com/khanio/docker-images/tree/master/precise-cassandra-titan
 sudo docker run -d  -p 9160:9160 -p 9200:9200 khanio/precise-cassandra-titan
 
+# if the tcp6 system ends up with the ports you need, you should follow the link below, to  
+# disable tcp6 glomming docker's port bindings:
+# http://serverfault.com/questions/545379/docker-will-only-bind-forwarded-ports-to-ipv6-interfaces
 
 # now you need this repo...
 git clone git@github.com:gremlins/shipyard.git
